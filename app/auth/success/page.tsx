@@ -1,0 +1,28 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+
+export default function SignUpSuccessPage() {
+  return (
+    <div className="flex min-h-screen w-full items-center justify-center bg-gradient-to-br from-blue-50 to-slate-100 p-6">
+      <div className="w-full max-w-md">
+        <Card className="border-slate-200 shadow-lg">
+          <CardHeader className="space-y-2 text-center">
+            <CardTitle className="font-serif text-3xl text-slate-900">Vérifiez votre email</CardTitle>
+            <CardDescription className="text-slate-600">
+              Un email de confirmation a été envoyé à votre adresse
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-center space-y-4">
+            <p className="text-sm text-slate-600">
+              Veuillez cliquer sur le lien dans l'email pour activer votre compte.
+            </p>
+            <Button asChild variant="outline" className="w-full bg-transparent">
+              <Link href="/auth/login">Retour à la connexion</Link>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  )
+}
